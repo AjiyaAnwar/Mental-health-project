@@ -1,10 +1,34 @@
+# MentalHealth.py
+import sys
+import os
+
+# Add debug information
+print(f"Python version: {sys.version}")
+print(f"Current directory: {os.getcwd()}")
+print(f"Files in directory: {os.listdir('.')}")
+
+# Try to import with fallback
+try:
+    import streamlit as st
+    import pandas as pd
+    import numpy as np
+    import matplotlib.pyplot as plt
+    import seaborn as sns
+    from sklearn.preprocessing import LabelEncoder
+    import warnings
+    warnings.filterwarnings('ignore')
+    
+    print("✅ All imports successful!")
+    
+except ImportError as e:
+    print(f"❌ Import error: {e}")
+    st.error(f"Import error: {e}")
+    st.stop()
+
+# Continue with your Streamlit app code...
+# [Your existing Streamlit code goes here]
 # Import necessary libraries
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-import seaborn as sns
-import warnings
-warnings.filterwarnings('ignore')
+
 
 # Set plotting style
 plt.style.use('seaborn-v0_8-darkgrid')
